@@ -26,8 +26,6 @@ def get_pnginfo(target, key=None):
 
     if (key is None):
         for index in (meta):
-            print(index)
-            print(meta.get(index))
             print(index + ': ' + str(meta.get(index)))
     else:
         if (key in meta):
