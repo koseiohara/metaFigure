@@ -7,4 +7,5 @@
 *.bin
 *.swp
 __pycache__
+sample/
 

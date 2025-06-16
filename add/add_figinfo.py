@@ -1,0 +1,31 @@
+
+import sys
+
+from add_pdfinfo import add_pdfinfo
+from add_pnginfo import add_pnginfo
+
+def add_figinfo(target, key, text):
+
+    if (target[-4:].lower() == '.pdf'):
+        add_pdfinfo(target, key, text)
+    elif (target[-4:].lower() == '.png'):
+        add_pnginfo(target, key, text)
+    else:
+        print('Unsupported Format : ' + target)
+        print('error stop')
+        exit(1)
+
+
+if __name__ == '__main__':
+    if (len(sys.argv) != 4):
+        print('add_figinfo must have 3 command line arguments : filename, key, description')
+        print('error stop')
+        exit(1)
+
+    figname = sys.argv[1]
+    key     = sys.argv[2]
+    text    = sys.argv[3]
+
+    add_figinfo(figname, key, text)
+
+

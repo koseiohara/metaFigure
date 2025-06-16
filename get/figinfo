@@ -10,10 +10,14 @@ def get_pdfinfo(target, key=None):
 
     if (key is None):
         for index in (meta):
-            print(index[1:] + ': ' + meta[index])
+            print(index[1:] + ':')
+            print(meta[index])
+            print()
     else:
         if ('/'+key in meta):
-            print(key + ': ' + meta['/'+key])
+            print(key + ':')
+            print(meta['/'+key])
+            print()
         else:
             print(key + ': No such key in ' + target)
             print('error stop')
@@ -26,10 +30,15 @@ def get_pnginfo(target, key=None):
 
     if (key is None):
         for index in (meta):
-            print(index + ': ' + str(meta.get(index)))
+            print(index + ':')
+            print(meta[index])
+            print()
+            #print(str(meta.get(index)))
     else:
         if (key in meta):
-            print(key + ': ' + meta[key])
+            print(key + ':')
+            print(meta[key])
+            print()
         else:
             print(key + ': No such key in ' + target)
             print('error stop')
