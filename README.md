@@ -31,17 +31,17 @@ $ make uninstall
 Adding new metadata to a PDF or PNG.
 This tool can be used as both a terminal command and a Python function.  
 
-When this is used as a terminal command, `FigureName`, `Key`, and `Description` are needed as arguments
+When this is used as a terminal command, `target`, `key`, and `text` are needed as arguments
 ```sh
-$ add_figinfo FigureName Key Description
+$ add_figinfo target key text
 ```
-`FigureName` is the file name of the target PDF/PNG.
-`Key` is the name of metadata.
-`Description` is the description identified by `Key`  
+`target` is the file name of the target PDF/PNG.
+`key` is the name of metadata.
+`text` is the description identified by `key`.  
 
-Similary, when this is used as a function in Python, `FigureName`, `Key`, and `Description` are needed as arguments
+Similary, when this is used as a function in Python, `target`, `key`, and `text` are needed as arguments
 ```python
-add_figinfo(FigureName, Key, Description)
+add_figinfo(target, key, text)
 ```
 Matadata will be added to the target file.
 
@@ -49,8 +49,8 @@ Matadata will be added to the target file.
 Extracting and Displaying the metadata from PDF/PNG.
 This tool can be used only on the terminal.
 ```sh
-$ figinfo FigureName [Key]
+$ figinfo target [key]
 ```
-If `Key` is omitted, all descriptions will be displaied.
+If `key` is omitted, all descriptions will be displaied.
 Otherwise, the specified metadata will be displaied.
 
