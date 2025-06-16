@@ -9,7 +9,7 @@ PIL 9.5.0
 PDF version 1.4  
 
 ## Install
-Install the source codes from GitHub
+Install the source code from GitHub
 ```sh
 $ git clone https://github.com/koseiohara/metaFigure.git
 $ cd metaFigure
@@ -28,7 +28,7 @@ $ make uninstall
 - [figinfo](#figinfo)
 
 ## add_figinfo<a id="add"></a>
-Adding new metadata to a PDF or PNG.
+Adds new metadata to a PDF or PNG.
 This tool can be used as both a terminal command and a Python function.  
 
 When this is used as a terminal command, `target`, `key`, and `text` are needed as arguments
@@ -39,18 +39,18 @@ $ add_figinfo target key text
 `key` is the name of metadata.
 `text` is the description identified by `key`.  
 
-Similary, when this is used as a function in Python, `target`, `key`, and `text` are needed as arguments
+Similarly, when this is used as a function in Python, `target`, `key`, and `text` are needed as arguments
 ```python
 add_figinfo(target, key, text)
 ```
-Matadata will be added to the target file.
+Metadata will be added to the target file.
 
 ## figinfo<a id="figinfo"></a>
-Extracting and Displaying the metadata from PDF/PNG.
+Extracts and Displays the metadata from a PDF/PNG file.
 This tool can be used only on the terminal.
 ```sh
 $ figinfo target [key]
 ```
-If `key` is omitted, all descriptions will be displaied.
-Otherwise, the specified metadata will be displaied.
+If `key` is omitted, all descriptions will be displayed.
+Otherwise, the specified metadata will be displayed.
 
