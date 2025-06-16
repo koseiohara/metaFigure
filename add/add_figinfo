@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+
+import sys
+
 from add_pdfinfo import add_pdfinfo
 from add_pnginfo import add_pnginfo
 
@@ -13,6 +17,16 @@ def add_figinfo(target, key, text):
         exit(1)
 
 
-add_figinfo('DIFF_1990_2020_VINT_qe_ANLFILTER.pdf', 'hoge1', 'fuga')
-add_figinfo('JRA3Q_MIM_st_1970_2022_DJF.png', 'hoge1', 'fuga')
-    
+if __name__ == '__main__':
+    if (len(sys.argv) != 4):
+        print('add_figinfo must have 3 command line arguments : filename, key, description')
+        print('error stop')
+        exit(1)
+
+    figname = sys.argv[1]
+    key     = sys.argv[2]
+    text    = sys.argv[3]
+
+    add_figinfo(figname, key, text)
+
+
