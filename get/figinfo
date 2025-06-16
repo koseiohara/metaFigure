@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+
+import sys
+from PyPDF2 import PdfReader
+from PIL    import Image
+
+def get_pdfinfo(target, key=None):
+    reader = PdfReader(target)
+    meta   = reader.metadata
+
+    if (key is None):
+        for index in (meta):
+            print(index[1:] + ': ' + meta[index])
+    else:
+        if ('/'+key in meta):
+            print(key + ': ' + meta['/'+key])
+        else:
+            print(key + ': No such key in ' + target)
+            print('error stop')
+            exit(1)
+
+
+def get_pnginfo(target, key=None):
+    png = Image.open(target)
+    meta = png.info
+
+    if (key is None):
+        for index in (meta):
+            print(index + ': ' + meta[index])
+    else:
+        if (key in meta):
+            print(key + ': ' + meta[key])
+        else:
+            print(key + ': No such key in ' + target)
+            print('error stop')
+            exit(1)
+
+
+
+fig = sys.argv[1]
+narg = len(sys.argv) - 1
+
+if (fig[-4:].lower() == '.pdf'):
+    funcp = get_pdfinfo
+elif (fig[-4:].lower() == '.png'):
+    funcp = get_pnginfo
+else:
+    print('Unsupported Format : ' + target)
+    print('error stop')
+    exit(1)
+    
+
+if (narg == 1):
+    funcp(fig)
+elif (narg >= 2):
+    for i in range(2, narg+1):
+        funcp(fig, sys.argv[i])
+
+
+
