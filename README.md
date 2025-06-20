@@ -2,11 +2,17 @@
 Metadata reader and writer in Python  
 
 ## Test Environment
-CentOS7  
-Python 3.7.7  
-PyPDF2 3.0.1  
-PIL 9.5.0  
-PDF version 1.4  
+- CentOS 7
+    - Python 3.7.7
+    - PyPDF2 3.0.1
+    - PIL 9.5.0
+    - PDF version 1.4
+- macOS 15.1
+    - Apple M4 chip
+    - Python3.9.6
+    - PyPDF2 3.0.1
+    - PIL 11.2.1
+    - PDF version 1.4
 
 ## Install
 Install the source code from GitHub
